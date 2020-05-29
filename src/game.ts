@@ -9,25 +9,22 @@ buildScene()
 //let partyTime = new Date('T21:00:00-03:00')
 let partyTime = new Date('2019-05-09T21:00:00')
 //function to call API
-export function checkTime() {
-  let url =
-    'http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires'
+async function checkTime() {
+  let url = 'http://worldtimeapi.org/api/timezone/etc/gmt+3'
 
-  executeTask(async () => {
-    try {
-      let response = await fetch(url)
-      let json = await response.json()
-      let toDate = new Date(json.datetime)
-      log(toDate)
-      if (toDate.getHours() >= partyTime.getHours()) {
-        log('PARTY TIME!')
-        startParty()
-        partyChecker.removeComponent(utils.Interval)
-      }
-    } catch {
-      log('error getting time data')
+  try {
+    let response = await fetch(url)
+    let json = await response.json()
+    let toDate = new Date(json.datetime)
+    log(toDate)
+    if (toDate.getHours() >= partyTime.getHours()) {
+      log('PARTY TIME!')
+      startParty()
+      partyChecker.removeComponent(utils.Interval)
     }
-  })
+  } catch {
+    log('error getting time data')
+  }
 }
 
 let partyChecker = new Entity()

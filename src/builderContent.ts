@@ -215,7 +215,7 @@ export function buildScene() {
   script1.init(options)
   script1.spawn(
     signpostRoot,
-    { text: 'Party at 9 PM\nGMT -3', fontSize: 24 },
+    { text: 'Party at 9 PM\nGMT +3', fontSize: 24 },
     createChannel(channelId, signpostRoot, channelBus)
   )
 }
