@@ -1,5 +1,5 @@
-import { buildScene } from './builderContent'
 import utils from '../node_modules/decentraland-ecs-utils/index'
+import { buildScene } from './builderContent'
 import { startParty } from './startParty'
 
 // add content from the Builder
@@ -18,9 +18,12 @@ async function checkTime() {
     let toDate = new Date(json.datetime)
     log(toDate)
     
+    // compare the party start time to the current hour
     if (toDate.getHours() >= partyTime.getHours()) {
       log('PARTY TIME!')
       startParty()
+      
+      // stop checking for the party starting, it's already started!
       partyChecker.removeComponent(utils.Interval)
     }
   } catch(e) {
