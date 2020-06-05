@@ -1,5 +1,4 @@
 import { createChannel } from '../node_modules/decentraland-builder-scripts/channel'
-import { createInventory } from '../node_modules/decentraland-builder-scripts/inventory'
 import Script1 from '../3f3fe65b-c648-44bc-8781-c2a40bc95bb4/src/item'
 
 export function buildScene() {
@@ -208,11 +207,9 @@ export function buildScene() {
 
   const channelId = Math.random().toString(16).slice(2)
   const channelBus = new MessageBus()
-  const inventory = createInventory(UICanvas, UIContainerStack, UIImage)
-  const options = { inventory }
 
   const script1 = new Script1()
-  script1.init(options)
+  script1.init()
   script1.spawn(
     signpostRoot,
     { text: 'Party at 9 PM\nGMT +3', fontSize: 24 },
