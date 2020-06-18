@@ -7,6 +7,7 @@ buildScene()
 
 // time for the party to start
 let partyTime = new Date('2020-05-09T21:00:00')
+let partyEnd = new Date('2020-05-09T24:00:00')
 
 //function to call the API
 async function checkTime() {
@@ -19,7 +20,10 @@ async function checkTime() {
     log(toDate)
 
     // compare the party start time to the current hour
-    if (toDate.getHours() >= partyTime.getHours()) {
+    if (
+      toDate.getHours() >= partyTime.getHours() &&
+      toDate.getHours() <= partyEnd.getHours()
+    ) {
       log('PARTY TIME!')
       startParty()
 
