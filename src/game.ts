@@ -6,16 +6,16 @@ import { startParty } from './startParty'
 buildScene()
 
 // time for the party to start
-let partyTime = new Date('2020-05-09T21:00:00')
-let partyEnd = new Date('2020-05-09T24:00:00')
+const partyTime = new Date('2020-05-09T21:00:00')
+const partyEnd = new Date('2020-05-09T24:00:00')
 
 //function to call the API
 async function checkTime() {
-  let json = await utils.sendRequest(
+  const json = await utils.sendRequest(
     'https://worldtimeapi.org/api/timezone/etc/gmt+3'
   )
 
-  let toDate = new Date(json.datetime)
+  const toDate = new Date(json.datetime)
   log(toDate)
 
   // compare the party start time to the current hour
@@ -32,10 +32,10 @@ async function checkTime() {
 }
 
 // dummy entity to run the checkTime() function once every second
-let partyChecker = new Entity()
+const partyChecker = new Entity()
 engine.addEntity(partyChecker)
 partyChecker.addComponent(
   new utils.Interval(1000, () => {
-    checkTime()
+    checkTime().catch((error) => log(error))
   })
 )

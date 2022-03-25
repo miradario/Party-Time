@@ -4,7 +4,7 @@ export function startParty() {
   streamSource.addComponent(
     new Transform({ position: new Vector3(56, 10, 55) })
   )
-  let music = new AudioStream(
+  const music = new AudioStream(
     'https://icecast.ravepartyradio.org/ravepartyradio-192.mp3'
   )
   streamSource.addComponent(music)
@@ -32,7 +32,7 @@ export function startParty() {
     new Transform({
       position: new Vector3(8, 5, 8),
       rotation: Quaternion.Euler(45, 0, 45),
-      scale: new Vector3(2, 2, 2),
+      scale: new Vector3(2, 2, 2)
     })
   )
   flashScreen.addComponent(musicVideoMaterial)
@@ -44,7 +44,7 @@ export function startParty() {
     new Transform({
       position: new Vector3(3, 2, 3),
       rotation: Quaternion.Euler(45, 0, 45),
-      scale: new Vector3(1, 1, 1),
+      scale: new Vector3(1, 1, 1)
     })
   )
   smallCube1.addComponent(musicVideoMaterial)
@@ -56,7 +56,7 @@ export function startParty() {
     new Transform({
       position: new Vector3(13, 4, 13),
       rotation: Quaternion.Euler(45, 0, 45),
-      scale: new Vector3(1, 1, 1),
+      scale: new Vector3(1, 1, 1)
     })
   )
   smallCube2.addComponent(musicVideoMaterial)
@@ -68,7 +68,7 @@ export function startParty() {
     new Transform({
       position: new Vector3(13, 8, 3),
       rotation: Quaternion.Euler(55, 42, 38.7),
-      scale: new Vector3(1.5, 1.5, 1.5),
+      scale: new Vector3(1.5, 1.5, 1.5)
     })
   )
   cone1.addComponent(musicVideoMaterial)
