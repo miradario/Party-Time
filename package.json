@@ -11,13 +11,14 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
   },
-   "devDependencies": {
-    "decentraland-ecs": "latest",
-    "@dcl/eslint-config": "^1.0.1"
+  "devDependencies": {
+    "@dcl/eslint-config": "^1.0.1",
+    "decentraland-ecs": "^6.11.14"
   },
   "dependencies": {
-    "@dcl/ecs-scene-utils":"latest",
-    "decentraland-builder-scripts": "latest"
+    "@dcl/ecs-scene-utils": "latest",
+    "decentraland-builder-scripts": "latest",
+    "decentraland-cli": "^0.0.1"
   },
   "bundleDependencies": [
     "@dcl/ecs-scene-utils"
